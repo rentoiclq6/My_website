@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 
@@ -114,6 +114,7 @@ const cases = [
 function App() {
   return (
     <>
+      <SandField />
       <Hero />
       <main>
         <Profile />
@@ -123,6 +124,107 @@ function App() {
       </main>
     </>
   );
+}
+
+function SandField() {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    const particles = [];
+    const mouse = { x: -9999, y: -9999, px: -9999, py: -9999, vx: 0, vy: 0 };
+    let width = 0;
+    let height = 0;
+    let frame = 0;
+
+    const resize = () => {
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = Math.floor(width * ratio);
+      canvas.height = Math.floor(height * ratio);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+      particles.length = 0;
+
+      const count = Math.floor(Math.min(420, Math.max(220, (width * height) / 6200)));
+      for (let index = 0; index < count; index += 1) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          baseX: Math.random() * width,
+          baseY: Math.random() * height,
+          size: Math.random() * 1.6 + 0.45,
+          drift: Math.random() * 0.45 + 0.08,
+          phase: Math.random() * Math.PI * 2,
+          alpha: Math.random() * 0.34 + 0.12,
+        });
+      }
+    };
+
+    const onMouseMove = (event) => {
+      mouse.vx = event.clientX - mouse.px;
+      mouse.vy = event.clientY - mouse.py;
+      mouse.px = mouse.x;
+      mouse.py = mouse.y;
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
+    };
+
+    const animate = () => {
+      frame += 0.012;
+      ctx.clearRect(0, 0, width, height);
+
+      for (const particle of particles) {
+        const dx = particle.x - mouse.x;
+        const dy = particle.y - mouse.y;
+        const distance = Math.sqrt(dx * dx + dy * dy) || 1;
+        const influence = Math.max(0, 1 - distance / 210);
+        const windX = influence * (mouse.vx * 0.18 + 18);
+        const windY = influence * (mouse.vy * 0.08 - 3);
+
+        particle.baseX += particle.drift;
+        if (particle.baseX > width + 24) particle.baseX = -24;
+
+        const waveX = Math.cos(frame + particle.phase) * 8;
+        const waveY = Math.sin(frame * 1.4 + particle.phase) * 5;
+        particle.x += (particle.baseX + waveX + windX - particle.x) * 0.045;
+        particle.y += (particle.baseY + waveY + windY - particle.y) * 0.045;
+
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(182, 255, 59, ${particle.alpha + influence * 0.32})`;
+        ctx.arc(particle.x, particle.y, particle.size + influence * 1.2, 0, Math.PI * 2);
+        ctx.fill();
+
+        if (influence > 0.08) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(40, 240, 212, ${influence * 0.18})`;
+          ctx.lineWidth = 1;
+          ctx.moveTo(particle.x, particle.y);
+          ctx.lineTo(particle.x - windX * 1.8, particle.y - windY * 2);
+          ctx.stroke();
+        }
+      }
+
+      mouse.vx *= 0.88;
+      mouse.vy *= 0.88;
+      requestAnimationFrame(animate);
+    };
+
+    resize();
+    animate();
+    window.addEventListener("resize", resize);
+    window.addEventListener("mousemove", onMouseMove);
+
+    return () => {
+      window.removeEventListener("resize", resize);
+      window.removeEventListener("mousemove", onMouseMove);
+    };
+  }, []);
+
+  return <canvas className="sand-field" ref={canvasRef} aria-hidden="true" />;
 }
 
 function Hero() {
@@ -189,7 +291,7 @@ function Profile() {
           <div className="portrait-orbit">
             <div className="portrait-core">
               <span>LH</span>
-              <small>VCU APP SW</small>
+              <small>VCU ASW</small>
             </div>
           </div>
           <div className="signal-line signal-a" />

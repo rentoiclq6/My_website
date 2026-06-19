@@ -33,6 +33,15 @@ body {
     #050608;
 }
 
+.sand-field {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.72;
+  mix-blend-mode: screen;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -97,6 +106,17 @@ video {
   color: rgba(244, 247, 248, 0.92);
   backdrop-filter: blur(18px);
   background: linear-gradient(180deg, rgba(5, 6, 8, 0.82), rgba(5, 6, 8, 0.2));
+}
+
+.hero,
+main,
+.site-header {
+  position: relative;
+}
+
+main,
+.site-header {
+  z-index: 2;
 }
 
 .brand,
