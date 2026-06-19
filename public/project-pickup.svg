@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#070b0e"/>
+      <stop offset=".5" stop-color="#111719"/>
+      <stop offset="1" stop-color="#050608"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#f2f8f7"/>
+      <stop offset=".48" stop-color="#c8d2d0"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <g opacity=".2" stroke="#f4f7f8">
+    <path d="M95 245H1230L1340 360V760H205L95 650Z" fill="none"/>
+    <path d="M95 392H1340M95 556H1340M330 245V760M612 245V760M894 245V760M1176 302V760"/>
+  </g>
+  <path d="M72 594 L238 470 H590 L676 384 H900 L996 476 H1140 L1288 588 L1340 662 H78 Z" fill="url(#body)"/>
+  <path d="M686 414 L766 368 H884 L962 474 H612 Z" fill="#071014"/>
+  <path d="M224 470 H590 L546 532 H142 Z" fill="#11191d"/>
+  <path d="M1000 480 H1150 L1254 560 H1034 Z" fill="#dfe8e6"/>
+  <path d="M80 662H1340" stroke="#ff3c25" stroke-width="8"/>
+  <circle cx="340" cy="680" r="96" fill="#050608" stroke="#303b3e" stroke-width="24"/>
+  <circle cx="340" cy="680" r="38" fill="#ff3c25"/>
+  <circle cx="1030" cy="680" r="96" fill="#050608" stroke="#303b3e" stroke-width="24"/>
+  <circle cx="1030" cy="680" r="38" fill="#ff3c25"/>
+  <text x="86" y="132" fill="#b6ff3b" font-family="Arial, sans-serif" font-size="34" font-weight="800">P2.5 + P4 · OTS3 FREEZE</text>
+  <text x="88" y="824" fill="#f4f7f8" font-family="Arial, sans-serif" font-size="62" font-weight="800">PHEV PICKUP CONTROL</text>
+</svg>

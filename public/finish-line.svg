@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#050608"/>
+  <g opacity=".42">
+    <path d="M-100 760 C300 520 640 500 980 590 C1210 652 1400 630 1700 450" fill="none" stroke="#b6ff3b" stroke-width="4"/>
+    <path d="M-120 830 C310 590 650 570 1000 660 C1240 722 1430 700 1720 520" fill="none" stroke="#28f0d4" stroke-width="2"/>
+  </g>
+  <g opacity=".18" fill="#fff">
+    <rect x="930" y="80" width="80" height="80"/>
+    <rect x="1090" y="80" width="80" height="80"/>
+    <rect x="1010" y="160" width="80" height="80"/>
+    <rect x="1170" y="160" width="80" height="80"/>
+    <rect x="930" y="240" width="80" height="80"/>
+    <rect x="1090" y="240" width="80" height="80"/>
+    <rect x="1010" y="320" width="80" height="80"/>
+    <rect x="1170" y="320" width="80" height="80"/>
+  </g>
+</svg>

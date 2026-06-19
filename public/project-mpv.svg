@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0f171a"/>
+      <stop offset=".55" stop-color="#050608"/>
+      <stop offset="1" stop-color="#111816"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#dfe8e6"/>
+      <stop offset=".5" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#869491"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <g opacity=".18" stroke="#f4f7f8">
+    <path d="M180 140H1020L1240 330V760H260L180 640Z" fill="none"/>
+    <path d="M180 330H1260M180 520H1260M380 140V760M640 140V760M900 140V760"/>
+  </g>
+  <path d="M92 558 L245 410 L748 382 L1088 414 L1280 560 L1340 642 L96 642 Z" fill="url(#skin)"/>
+  <path d="M278 462 L390 400 L742 386 L946 414 L1068 494 L254 494 Z" fill="#071014"/>
+  <path d="M782 392 L940 416 L1048 488 L800 488 Z" fill="#11191d"/>
+  <path d="M96 642H1340" stroke="#28f0d4" stroke-width="8"/>
+  <circle cx="356" cy="658" r="90" fill="#050608" stroke="#303b3e" stroke-width="24"/>
+  <circle cx="356" cy="658" r="34" fill="#28f0d4"/>
+  <circle cx="1040" cy="658" r="90" fill="#050608" stroke="#303b3e" stroke-width="24"/>
+  <circle cx="1040" cy="658" r="34" fill="#28f0d4"/>
+  <text x="86" y="128" fill="#b6ff3b" font-family="Arial, sans-serif" font-size="34" font-weight="800">S800 · MULTI PLATFORM RELEASE</text>
+  <text x="88" y="820" fill="#f4f7f8" font-family="Arial, sans-serif" font-size="62" font-weight="800">LUXURY MPV PLATFORM</text>
+</svg>
